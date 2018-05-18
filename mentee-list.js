@@ -171,4 +171,9 @@ function setColor(pointer)
 	{
 		dd.setAttribute('style','border : 5px solid rgba(60,179,113,1);border-radius: 5px;padding-top: 10px;padding-bottom: 10px;background-color : rgba(60,179,113,0.8) ; margin-right : 250px;') ;
 	}
+
+	else
+	{
+		dd.setAttribute('style','border : 5px solid silver;border-radius: 5px;padding-top: 10px;padding-bottom: 10px;background-color : gray ; margin-right : 250px;') ;
+	}
 }
