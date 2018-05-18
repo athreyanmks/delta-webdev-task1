@@ -7,13 +7,12 @@
 	<title>Mentee List</title>
 </head>
 
-<body>
+<body style="background-image: url('backgroundimg1.jpg');">
 	
-	<h1>List of Mentees</h1> 
+	<h1 style="border : 2px outset silver; margin-right: 1065px; padding : 10px; border-radius: 5px; background-color: gray ; font-family : Verdana; font-size: 50px; ">List of Mentees</h1> 
 	
 	<div class="buttonDiv">	
-	<button type="button" onclick="document.getElementById('addMenteeForm').style.display='block'" class ="addButton" >Add</button>
-	<button type="button" class="sortButton">Sort</button>
+	<button type="button" onclick="document.getElementById('addMenteeForm').style.display='block'" class ="addButton" style="padding: 5px 20px ;border-radius : 5px; font-size: 30px ;">Add</button>
 	</div>
 
 	<p id="test"></p>
@@ -23,7 +22,7 @@
   <form >
         
     <div class="imgcontainer">
-      <span onclick="document.getElementById('addMenteeForm').style.display='none'" class="close" title="Close PopUp">CLOSE</span>
+      <span onclick="document.getElementById('addMenteeForm').style.display='none'" class="close" title="Close PopUp" style="color: red">CLOSE</span>
       <h1 style="text-align:center">Mentee Details</h1>
     </div>
 
@@ -31,7 +30,8 @@
       <input id="addName" type="text" placeholder="Name"  style="position: center;">
       <input id="addRat" type="text" placeholder="Rating from 1-5"  >
       <input id="addCom" type="text" placeholder="Comments"  >       
-      <button type="button" onclick="addMentee();document.getElementById('addMenteeForm').style.display='none'; console.log('clicked');">Add</button>
+      <button type="button" onclick="addMentee();document.getElementById('addMenteeForm').style.display='none'; console.log('clicked');" style="position : absolute;top: 300px; left: 27px; font-size: 20px; font-family: Verdana;">Add</button>
+      <button type="reset" value="Reset" style="position : absolute;top: 300px; left: 97px; font-size: 20px; font-family: Verdana;">Reset</button>
       
     </div>
 
@@ -46,7 +46,7 @@
   <form >
         
     <div class="imgcontainer">
-      <span onclick="document.getElementById('editMenteeForm').style.display='none'" class="close" title="Close PopUp">CLOSE</span>
+      <span onclick="document.getElementById('editMenteeForm').style.display='none'" class="close" title="Close PopUp" style="color: red" >CLOSE</span>
       <h1 style="text-align:center">Edit Mentee</h1>
     </div>
 
@@ -54,7 +54,7 @@
       <input id="editName" type="text" placeholder="Name"  style="position: center;">
       <input id="editRat" type="text" placeholder="Rating from 1-5"  >
       <input id="editCom" type="text" placeholder="Comments"  >       
-      <button type="button" onclick="editMenteeInput();document.getElementById('editMenteeForm').style.display='none'; console.log('clicked');">Add</button>
+      <button type="button" onclick="editMenteeInput();document.getElementById('editMenteeForm').style.display='none'; console.log('clicked');" style="position : absolute;top: 300px; left: 27px; font-size: 20px; font-family: Verdana;">Edit</button>
       
     </div>
 

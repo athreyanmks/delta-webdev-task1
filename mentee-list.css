@@ -1,9 +1,10 @@
 .addButton{
 	position: absolute;
 	left: 1300px;
-	top: 40px;
+	top: 65px;
     border : 1px solid black;
     border-radius: 5px;
+    background-color: mediumseagreen;
 }
 
 .sortButton{
@@ -33,7 +34,7 @@
 input[type=text] {
     width: 90%;
     padding: 12px 20px;
-    margin: 8px 26px;
+    margin: 8px 300px 8px 26px;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
@@ -46,4 +47,11 @@ input[type=text] {
     color: #000;
     font-size: 35px;
     font-weight: bold;
+}
+
+.divisions{
+	border : 5px solid black;
+	border-radius: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
