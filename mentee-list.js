@@ -9,25 +9,25 @@ function dispMentee()
 	//para1.setAttribute('id','para'+k[j])                 
 	
 	var t = document.createTextNode(menteeArray[j].name+' '+menteeArray[j].rat+' '+menteeArray[j].com);
-	para1.setAttribute('id',"para"+j);   
+	para1.setAttribute('id',j+"para");   
 	para1.appendChild(t);                                          
 	document.body.appendChild(para1);
 
 
 	var btn = document.createElement("BUTTON");
-	btn.setAttribute("key","para"+j);
-	btn.setAttribute("id","btn"+j);     
+	btn.setAttribute("key",j+"para");
+	btn.setAttribute("id",j+"btn");     
 	btn.setAttribute("onclick"," this.parentElement.style.display = 'none'; ");   
 	var b = document.createTextNode("Del");       
 	btn.appendChild(b);                                
-	document.getElementById('para'+j).appendChild(btn);
+	document.getElementById(j+'para').appendChild(btn);
 
 	var btn2 = document.createElement("BUTTON");
 	btn2.setAttribute("num",j);
-	btn2.setAttribute("onclick",'editMentee(Number(this.num))')
+	btn2.setAttribute("onclick",'console.log(this.parentElement.id);console.log(parseInt(this.parentElement.id,10));editMentee(parseInt(this.parentElement.id,10));')
 	var e = document.createTextNode("Edit");
 	btn2.appendChild(e);
-	document.getElementById("para"+j).appendChild(btn2);
+	document.getElementById(j+"para").appendChild(btn2);
 
 
 ++j;
@@ -45,7 +45,7 @@ function addMentee()
 	 name = getInput('addName');
 	 rat = getInput('addRat');
 	 com = getInput('addCom');
-	document.getElementById('test').innerHTML=rat;
+	//document.getElementById('test').innerHTML=rat;
 	menteeArray.push({});
 	menteeArray[j].name = name;
 	menteeArray[j].rat = rat;
@@ -63,12 +63,13 @@ function hideMentee()
 	document.getElementById(this.getAttribute('key')).style.display='none'; 
 }
 
-function editMentee(y)
+function editMentee(idNum)
 {
-	editMenteeIdNum = y;
-	document.getElementById('editName').value = menteeArray[editMenteeIdNum].name;
-	document.getElementById('editRat').value = menteeArray[editMenteeIdNum].rat;
-	document.getElementById('editCom').value = menteeArray[editMenteeIdNum].com;
+	menteeIdNum = idNum;
+	console.log(idNum);
+	document.getElementById('editName').value = menteeArray[menteeIdNum].name;
+	document.getElementById('editRat').value = menteeArray[menteeIdNum].rat;
+	document.getElementById('editCom').value = menteeArray[menteeIdNum].com;
 	document.getElementById('editMenteeForm').style.display='block'
 
 }
@@ -80,6 +81,23 @@ function editMenteeInput()
 	name = getInput('editName');	
 	rat = getInput('editRat');
 	com = getInput('editCom');
-	console.log(rat==null);
-	document.getElementById('test').innerHTML=rat;
+
+	var editPara = document.getElementById(menteeIdNum+'para');
+	editPara.innerHTML= name + ' ' + rat + ' ' + com;
+	//document.getElementById('test').innerHTML=rat;
+
+	var btn = document.createElement("BUTTON");
+	btn.setAttribute("key",menteeIdNum+"para");
+	btn.setAttribute("id",menteeIdNum+"btn");     
+	btn.setAttribute("onclick"," this.parentElement.style.display = 'none'; ");   
+	var b = document.createTextNode("Del");       
+	btn.appendChild(b);                                
+	document.getElementById(menteeIdNum+'para').appendChild(btn);
+
+	var btn2 = document.createElement("BUTTON");
+	btn2.setAttribute("num",menteeIdNum);
+	btn2.setAttribute("onclick",'console.log(this.parentElement.id);console.log(parseInt(this.parentElement.id,10));editMentee(parseInt(this.parentElement.id,10));')
+	var e = document.createTextNode("Edit");
+	btn2.appendChild(e);
+	document.getElementById(menteeIdNum+"para").appendChild(btn2);
 }
