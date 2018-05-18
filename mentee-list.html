@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="mentee-list.css" type="text/css">
+	<script type="text/javascript" src="mentee-list.js"></script>
+	<title>Mentee List</title>
+</head>
+
+<body>
+	
+	<h1>List of Mentees</h1> 
+	
+	<div class="buttonDiv">	
+	<button type="button" onclick="document.getElementById('addMenteeForm').style.display='block'" class ="addButton" >Add</button>
+	<button type="button" class="sortButton">Sort</button>
+	</div>
+
+	<p id="test"></p>
+
+<div id='addMenteeForm' class="form">
+  
+  <form >
+        
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('addMenteeForm').style.display='none'" class="close" title="Close PopUp">CLOSE</span>
+      <h1 style="text-align:center">Mentee Details</h1>
+    </div>
+
+    <div class="container">
+      <input id="addName" type="text" placeholder="Name"  style="position: center;">
+      <input id="addRat" type="text" placeholder="Rating from 1-5"  >
+      <input id="addCom" type="text" placeholder="Comments"  >       
+      <button type="button" onclick="addMentee();document.getElementById('addMenteeForm').style.display='none'; console.log('clicked');">Add</button>
+      
+    </div>
+
+    
+    
+  </form>
+  
+</div>
+
+<div id='editMenteeForm' class="form">
+  
+  <form >
+        
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('editMenteeForm').style.display='none'" class="close" title="Close PopUp">CLOSE</span>
+      <h1 style="text-align:center">Edit Mentee</h1>
+    </div>
+
+    <div class="container">
+      <input id="editName" type="text" placeholder="Name"  style="position: center;">
+      <input id="editRat" type="text" placeholder="Rating from 1-5"  >
+      <input id="editCom" type="text" placeholder="Comments"  >       
+      <button type="button" onclick="editMenteeInput();document.getElementById('editMenteeForm').style.display='none'; console.log('clicked');">Add</button>
+      
+    </div>
+
+    
+    
+  </form>
+  
+</div>
+
+<div id="menteeList">
+    	
+</div>
+
+	
+
+
+</body>
+
+</html>
